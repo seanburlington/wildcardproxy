@@ -10,7 +10,7 @@ A wildcard reverse proxy to share all your containers on port 80 with easy dns
   
 You can use a local dns server if that works - but you can also use public DNS - even if (as in my case) you use a [private IP](https://en.wikipedia.org/wiki/Private_network) 
 
-## Build this proxy ##
+## Build this proxy (optional) ##
 
 `docker build -t wildcardproxy  .`
 
@@ -20,7 +20,13 @@ You can use a local dns server if that works - but you can also use public DNS -
 
 ## Start the proxy ##
 
+either using the local image you just built
+
 `docker run --name myproxy --network mynetwork -p 80:80 -d wildcardproxy`
+
+Or run the pre-built image 
+
+`docker run --name myproxy --network mynetwork -p 80:80 -d tangiblebytes/wildcardproxy`
 
 This starts the proxy server, attaches port 80 on the container to port 80 on the host and attaches the prxy to your new network
 
