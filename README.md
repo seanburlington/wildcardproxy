@@ -42,7 +42,7 @@ What the proxy does is look at the incoming hostname, takes the part before the 
 
 This code was based on [Writing a Reverse Proxy in just one line with Go](https://hackernoon.com/writing-a-reverse-proxy-in-just-one-line-with-go-c1edfa78c84b)
 
-You might also want to look at [Automated Nginx Reverse Proxy for Docker](this http://jasonwilder.com/blog/2014/03/25/automated-nginx-reverse-proxy-for-docker/)
+You might also want to look at [Automated Nginx Reverse Proxy for Docker](http://jasonwilder.com/blog/2014/03/25/automated-nginx-reverse-proxy-for-docker/)
 
 But I think the solution I have written is very simple and requires no changes when containers stop and start
 
