@@ -1,8 +1,6 @@
 # Wildcard Reverse Proxy #
 
-A very simple reverse proxy intended to make docker containers available vi the hosts public IP 
-
-How I use it 
+A wildcard reverse proxy to share all your containers on port 80 with easy dns
 
 ## Create a [wildcard DNS](https://en.wikipedia.org/wiki/Wildcard_DNS_record) entry pointing to my IP  ##
 
