@@ -38,6 +38,8 @@ eg
 
 http://webserver.local.tangiblebytes.co.uk/
 
+## Explanation ##
+
 What the proxy does is look at the incoming hostname, takes the part before the first . and forwards the request to a container with taht short name on the local docker network.
 
 This code was based on [Writing a Reverse Proxy in just one line with Go](https://hackernoon.com/writing-a-reverse-proxy-in-just-one-line-with-go-c1edfa78c84b)
