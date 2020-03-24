@@ -42,6 +42,16 @@ eg
 
 http://webserver.local.tangiblebytes.co.uk/
 
+## Mailhog ##
+
+https://github.com/mailhog/MailHog
+
+Mailhog listens on port 8025 - this proxy will forward requests it recieves on port 80 to 8025 if the hostname ends `_mailhog`
+
+eg start a mailhog instance catching mail for your webserver - call it webserver_mailhog ot will listen locally on port 8025 but you can access it via the proxy on the standard port - eg http://webserver_mailhog.local.tangiblebytes.co.uk/ 
+
+NB this is experimental and does not yet address this issue https://github.com/mailhog/MailHog/issues/117
+
 ## Explanation ##
 
 What the proxy does is look at the incoming hostname, takes the part before the first . and forwards the request to a container with taht short name on the local docker network.

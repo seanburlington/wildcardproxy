@@ -26,17 +26,20 @@ func handleRequestAndRedirect(res http.ResponseWriter, req *http.Request) {
 
 	re := regexp.MustCompile(`^[a-z0-9_]+`)
 	host := re.FindString(req.Host)
+	port := ""
+	matched, _ := regexp.MatchString("_mailhog$", host)
+	if matched {
+		port = ":8025"
+	}
 
-	url, _ := url.Parse("http://" + host)
+	url, _ := url.Parse("http://" + host + port)
 
 	// create the reverse proxy
 	proxy := httputil.NewSingleHostReverseProxy(url)
 
 	//TODO Update the headers to allow for SSL redirection
-	//
 	req.URL.Host = url.Host
 	req.URL.Scheme = url.Scheme
-	req.Header.Set("X-Forwarded-Host", req.Header.Get("Host"))
 	req.Host = url.Host
 
 	// Note that ServeHttp is non blocking and uses a go routine under the hood
